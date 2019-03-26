@@ -1,0 +1,122 @@
+Module                  Size  Used by
+rfcomm                 77824  14
+ccm                    20480  0
+openvswitch           106496  0
+nf_conntrack_ipv6      20480  1
+nf_nat_ipv6            16384  1 openvswitch
+nf_conntrack_ipv4      16384  1
+nf_defrag_ipv4         16384  1 nf_conntrack_ipv4
+nf_nat_ipv4            16384  1 openvswitch
+nf_defrag_ipv6         36864  2 nf_conntrack_ipv6,openvswitch
+nf_nat                 24576  3 openvswitch,nf_nat_ipv6,nf_nat_ipv4
+nf_conntrack          110592  6 nf_conntrack_ipv6,openvswitch,nf_conntrack_ipv4,nf_nat_ipv6,nf_nat_ipv4,nf_nat
+libcrc32c              16384  1 openvswitch
+bnep                   20480  2
+binfmt_misc            20480  1
+intel_rapl             20480  0
+x86_pkg_temp_thermal    16384  0
+intel_powerclamp       16384  0
+coretemp               16384  0
+uvcvideo               90112  0
+kvm_intel             192512  0
+videobuf2_vmalloc      16384  1 uvcvideo
+kvm                   598016  1 kvm_intel
+videobuf2_memops       16384  1 videobuf2_vmalloc
+videobuf2_v4l2         24576  1 uvcvideo
+videobuf2_core         40960  2 uvcvideo,videobuf2_v4l2
+irqbypass              16384  1 kvm
+videodev              180224  3 uvcvideo,videobuf2_core,videobuf2_v4l2
+media                  40960  2 uvcvideo,videodev
+crct10dif_pclmul       16384  0
+crc32_pclmul           16384  0
+ghash_clmulni_intel    16384  0
+aesni_intel           167936  0
+arc4                   16384  2
+aes_x86_64             20480  1 aesni_intel
+lrw                    16384  1 aesni_intel
+rtl8723be              90112  0
+btcoexist              53248  1 rtl8723be
+glue_helper            16384  1 aesni_intel
+rtl8723_common         24576  1 rtl8723be
+rtl_pci                28672  1 rtl8723be
+rtlwifi                77824  2 rtl_pci,rtl8723be
+snd_hda_codec_hdmi     45056  1
+ablk_helper            16384  1 aesni_intel
+btusb                  45056  0
+cryptd                 24576  3 ablk_helper,ghash_clmulni_intel,aesni_intel
+btrtl                  16384  1 btusb
+snd_hda_codec_realtek    86016  1
+btbcm                  16384  1 btusb
+snd_hda_codec_generic    73728  1 snd_hda_codec_realtek
+mac80211              761856  3 rtl_pci,rtlwifi,rtl8723be
+btintel                16384  1 btusb
+bluetooth             557056  41 btrtl,btintel,bnep,btbcm,rfcomm,btusb
+snd_hda_intel          36864  5
+snd_hda_codec         135168  4 snd_hda_intel,snd_hda_codec_hdmi,snd_hda_codec_generic,snd_hda_codec_realtek
+snd_hda_core           86016  5 snd_hda_intel,snd_hda_codec,snd_hda_codec_hdmi,snd_hda_codec_generic,snd_hda_codec_realtek
+cfg80211              581632  2 mac80211,rtlwifi
+snd_hwdep              16384  1 snd_hda_codec
+intel_cstate           16384  0
+snd_pcm               110592  4 snd_hda_intel,snd_hda_codec,snd_hda_core,snd_hda_codec_hdmi
+hp_wmi                 16384  0
+sparse_keymap          16384  1 hp_wmi
+snd_seq_midi           16384  0
+snd_seq_midi_event     16384  1 snd_seq_midi
+snd_rawmidi            32768  1 snd_seq_midi
+snd_seq                69632  2 snd_seq_midi_event,snd_seq_midi
+snd_seq_device         16384  3 snd_seq,snd_rawmidi,snd_seq_midi
+snd_timer              32768  2 snd_seq,snd_pcm
+intel_rapl_perf        16384  0
+input_leds             16384  0
+joydev                 20480  0
+snd                    86016  21 snd_hda_intel,snd_hwdep,snd_seq,snd_hda_codec,snd_timer,snd_rawmidi,snd_hda_codec_hdmi,snd_hda_codec_generic,snd_seq_device,snd_hda_codec_realtek,snd_pcm
+serio_raw              16384  0
+soundcore              16384  1 snd
+processor_thermal_device    16384  0
+hp_accel               28672  0
+int340x_thermal_zone    16384  1 processor_thermal_device
+shpchp                 36864  0
+i2c_i801               28672  0
+lis3lv02d              20480  1 hp_accel
+intel_soc_dts_iosf     16384  1 processor_thermal_device
+hp_wireless            16384  0
+int3400_thermal        16384  0
+mei_me                 40960  0
+input_polldev          16384  1 lis3lv02d
+mei                   102400  1 mei_me
+tpm_crb                16384  0
+acpi_thermal_rel       16384  1 int3400_thermal
+i2c_smbus              16384  1 i2c_i801
+mac_hid                16384  0
+acpi_pad               24576  0
+lpc_ich                24576  0
+parport_pc             32768  0
+ppdev                  20480  0
+lp                     20480  0
+parport                49152  3 lp,parport_pc,ppdev
+autofs4                40960  2
+btrfs                1060864  0
+xor                    24576  1 btrfs
+raid6_pq              102400  1 btrfs
+dm_mirror              24576  0
+dm_region_hash         24576  1 dm_mirror
+dm_log                 20480  2 dm_mirror,dm_region_hash
+nouveau              1572864  0
+i915                 1314816  5
+mxm_wmi                16384  1 nouveau
+ttm                   102400  1 nouveau
+psmouse               139264  0
+i2c_algo_bit           16384  2 nouveau,i915
+drm_kms_helper        167936  2 nouveau,i915
+syscopyarea            16384  1 drm_kms_helper
+sysfillrect            16384  1 drm_kms_helper
+sysimgblt              16384  1 drm_kms_helper
+fb_sys_fops            16384  1 drm_kms_helper
+ahci                   36864  4
+drm                   368640  8 nouveau,i915,ttm,drm_kms_helper
+libahci                32768  1 ahci
+r8169                  81920  0
+mii                    16384  1 r8169
+wmi                    16384  3 mxm_wmi,nouveau,hp_wmi
+video                  40960  2 nouveau,i915
+fjes                   28672  0
