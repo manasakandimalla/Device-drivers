@@ -1,0 +1,6 @@
+commands : 
+xinput
+xinput create-master Pointer2   //[id2]
+xinput
+xinput reattach id1 id2  // (pointer,mouse)
+xinput --remove-master id2
